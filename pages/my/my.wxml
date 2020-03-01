@@ -34,7 +34,7 @@
         </view>
 
         <view class="order-container">
-            <l-list l-class="my-order" title="我的订单"/>
+            <l-list l-class="my-order" bind:lintap="onTapOrder" title="我的订单"/>
 
         </view>
 

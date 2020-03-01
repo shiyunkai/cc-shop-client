@@ -1,7 +1,7 @@
-<view class="container">
+<view class="container" style="height:{{placeholderH}}rpx">
   <view class="inner-container" style="height:{{navH}}rpx;margin-top:{{top}}rpx;">
     <image bindtap="toIndex" class="img" src="/images/nav/navbar.png"></image>
   </view>
 </view>
 
-<view class="placeholder"></view>
+<view style="height:{{placeholderH}}rpx"></view>

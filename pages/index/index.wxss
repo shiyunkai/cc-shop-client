@@ -1,3 +1,7 @@
+page{
+  background-color: #ffffff;
+}
+
 .container {
   width: 100%;
   display: flex;
@@ -7,6 +11,7 @@
 }
 
 .search {
+
 }
 
 .wx-swiper-dots {
@@ -81,4 +86,24 @@
   margin-top: 20rpx;
   display:flex;
   flex-direction:column;
+}
+
+
+.ext-tabs{
+  background-color: #ffffff!important;
+}
+
+.ext-inactive-tabs{
+  color: #666666FF!important;
+  font-size: 34rpx!important;
+}
+
+.ext-active-tabs{
+  color: #A2313E!important;
+  font-size: 36rpx!important;
+}
+
+.ext-tabs-line{
+  width: 50%!important;
+  background-color: #A2313E!important;
 }

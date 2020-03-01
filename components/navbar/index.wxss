@@ -25,7 +25,3 @@
   height: 32rpx;
   display: flex;
 }
-
-.placeholder{
-  height: 145rpx;
-}

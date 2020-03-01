@@ -3,11 +3,12 @@
 <view class="container">
 
   <view class="tabs-container">
-    <l-tabs l-class-content="tabs-content" l-class-header-line="tabs-line" bind:linchange="" equal-width="{{false}}" animated="{{true}}" scrollable="{{true}}" active-color="#A2313E" inactive-color="#9D9B9B">
+    <l-tabs l-class-header="ext-tabs" l-inactive-class="ext-inactive-tabs" l-active-class="ext-active-tabs" l-line-class="ext-tabs-line" equal-width="{{false}}" active-key="one" bind:linchange="" animated="{{true}}" scrollable="{{true}}">
+
       <l-tabpanel tab="全部" key="one" slot="one">
         <view class="order-list">
           <block wx:for="{{orderList}}" wx:key="index">
-            <s-order-item data="{{item}}"/>
+            <s-order-item data="{{item}}" />
           </block>
         </view>
       </l-tabpanel>

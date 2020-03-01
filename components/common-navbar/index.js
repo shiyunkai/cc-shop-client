@@ -15,17 +15,24 @@ Component({
    */
   data: {
     navH: 0,
-    top:0
+    top:0,
+    placeholderH:0
   },
 
   lifetimes: {
-    async attached () {
+    async attached() {
       const res = await promisic(wx.getSystemInfo)()
-      const navH = res.statusBarHeight+26;
-      const top = res.safeArea.top+44
+      if (res.model === "iPhone X") {
+        res.statusBarHeight += 15
+        res.safeArea.top += 15
+      }
+      const navH = res.statusBarHeight + 26;
+      const top = res.safeArea.top + 54
+      const placeholderH = res.statusBarHeight + 120
       this.setData({
         navH,
-        top
+        top,
+        placeholderH
       })
     },
   },
