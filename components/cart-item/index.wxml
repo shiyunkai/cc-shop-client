@@ -1,0 +1,24 @@
+<view class="container">
+
+  <view class="inner-container">
+
+    <s-checkbox></s-checkbox>
+
+    <view class="product-left-container">
+      <image class="{{isStock?'img':'img-inactive'}}" src="{{data.img}}"></image>
+      <text class="stock">有货</text>
+    </view>
+
+    <view class="product-right-container">
+      <text class="title">{{data.title}}</text>
+      <l-price value="68" color="rgba(162, 49, 62, 1)" size="28"></l-price>
+    </view>
+
+    <view class="counter-container">
+      <l-counter l-class="counter" l-symbol-class="symbol-class" l-count-class="count-class" count="1"min="1"max="{{data.stock}}"/>
+  </view>
+
+  </view>
+
+
+</view>

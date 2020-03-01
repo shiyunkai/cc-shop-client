@@ -2,6 +2,7 @@
  * 用户的选择状态记录
  */
 import {Cell} from "./cell";
+import {Joiner} from "../../utils/joiner";
 
 class SkuPending {
     pending = []
@@ -11,10 +12,10 @@ class SkuPending {
         this.size = size
     }
 
-    init(sku){
-        for(let i=0;i <sku.specs.length; i++){
+    init(sku) {
+        for (let i = 0; i < sku.specs.length; i++) {
             const cell = new Cell(sku.specs[i])
-            this.insertCell(cell,i)
+            this.insertCell(cell, i)
         }
 
     }
@@ -24,18 +25,18 @@ class SkuPending {
      * @param cell
      * @param x 行号
      */
-    insertCell(cell, x){
+    insertCell(cell, x) {
         this.pending[x] = cell
     }
 
     // 是否已经选择完整sku
-    isIntact(){
+    isIntact() {
         // if(this.size !== this.pending.length){
         //     return false
         // }
 
-        for(let i=0; i< this.size; i++){
-            if(this._isEmptyPart(i)){
+        for (let i = 0; i < this.size; i++) {
+            if (this._isEmptyPart(i)) {
                 return false
             }
         }
@@ -43,24 +44,46 @@ class SkuPending {
         return true
     }
 
-    removeCell(x){
+    removeCell(x) {
         this.pending[x] = null
     }
 
-    findSelectedCellByX(x){
+    findSelectedCellByX(x) {
         return this.pending[x]
     }
 
-    isSelected(cell, x){
+    isSelected(cell, x) {
         const pendingCell = this.pending[x]
-        if(!pendingCell){
+        if (!pendingCell) {
             return false
         }
 
         return cell.id === pendingCell.id
     }
 
-    _isEmptyPart(index){
+    getSkuNames() {
+        const joiner = new Joiner('，')
+        this.pending.forEach(c => {
+            if (c) {
+                joiner.join(c.title)
+            }
+        })
+
+        return joiner.getStr()
+    }
+
+    getSelectedSkuCode() {
+        const joiner = new Joiner('#')
+        this.pending.forEach(s => {
+            if (s) {
+                joiner.join(s.spec.key_id + '-' + s.spec.value_id)
+            }
+        })
+
+        return joiner.getStr()
+    }
+
+    _isEmptyPart(index) {
         return !this.pending[index]
     }
 

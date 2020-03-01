@@ -1,0 +1,3 @@
+<view class="container">
+    <image bindtap="ontap" class="img" src="{{selected ?activeSrc:src}}"></image>
+</view>

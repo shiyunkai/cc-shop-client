@@ -1,0 +1,14 @@
+<view class="container">
+  <view class="inner-container" style="height:{{navH}}rpx;margin-top:{{top}}rpx;">
+    <view class="img-container">
+      <image bindtap="toBack" class="img" src="/images/nav/return.png"></image>
+    </view>
+    <view class="title-container">
+      <text class="title">{{title}}</text>
+    </view>
+
+  </view>
+</view>
+
+
+<view class="placeholder"> </view>

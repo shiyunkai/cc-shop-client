@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/my/my",
+    "pages/cart/cart",
+    "pages/order/order"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "borderStyle": "black",
+    "selectedColor": "#8C394E",
+    "backgroundColor": "#ffffff",
+    "color": "#9E9B9C",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "selectedIconPath": "/images/tab/home@selected.png",
+        "iconPath": "/images/tab/home.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "selectedIconPath": "/images/tab/cart@selected.png",
+        "iconPath": "/images/tab/cart.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "selectedIconPath": "/images/tab/my@selected.png",
+        "iconPath": "/images/tab/my.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "l-price": "/miniprogram_npm/lin-ui/price/index",
+    "l-water-flow": "/miniprogram_npm/lin-ui/water-flow/index",
+    "s-navbar": "/components/navbar/index",
+    "s-common-navbar": "/components/common-navbar/index",
+    "s-checkbox": "/components/checkbox/index",
+    "s-line": "/components/line/index",
+    "l-segment": "/miniprogram_npm/lin-ui/segment/index",
+    "l-segment-item": "/miniprogram_npm/lin-ui/segment-item/index",
+    "l-tabs": "/miniprogram_npm/lin-ui/tabs/index",
+    "l-tabpanel": "/miniprogram_npm/lin-ui/tabpanel/index",
+    "l-popup": "/miniprogram_npm/lin-ui/popup/index",
+    "l-button": "/miniprogram_npm/lin-ui/button/index",
+    "l-counter": "/miniprogram_npm/lin-ui/counter/index",
+    "l-list": "/miniprogram_npm/lin-ui/list/index",
+    "l-grid": "/miniprogram_npm/lin-ui/grid/index",
+    "l-grid-item": "/miniprogram_npm/lin-ui/grid-item/index"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

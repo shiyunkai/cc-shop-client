@@ -1,0 +1,9 @@
+
+.tabs-content{
+  font-size: 36rpx !important;
+  color: yellow!important;
+}
+
+.tabs-line {
+  width: 50%！important;
+}

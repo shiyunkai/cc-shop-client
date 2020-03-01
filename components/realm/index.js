@@ -16,12 +16,13 @@ Component({
             if (!spu) {
                 return
             }
-            if(Spu.isNoSpec(spu)){
+            if (Spu.isNoSpec(spu)) {
                 this.processNoSpec(spu)
-            }else{
+            } else {
                 this.processHasSpec(spu)
             }
-        }
+        },
+
     },
 
     /**
@@ -34,8 +35,11 @@ Component({
         title: String,
         price: Number,
         discountPrice: Number,
-        noSpec:false,
-        skuIntact:false
+        count:Number,
+        noSpec: false,
+        skuIntact: false,
+        selectedSpecsNames: String,
+        noSelectedSpecsNames: String
     },
 
     /**
@@ -55,7 +59,7 @@ Component({
                 title: spu.title,
                 price: spu.price,
                 discountPrice: spu.discount_price,
-                skuIntact:this.data.judger.isSkuIntact()
+                skuIntact: this.data.judger.isSkuIntact()
             })
         },
 
@@ -66,18 +70,32 @@ Component({
                 price: sku.price,
                 discountPrice: sku.discount_price,
                 stock: sku.stock,
-                skuIntact:this.data.judger.isSkuIntact()
+                skuIntact: this.data.judger.isSkuIntact()
             })
         },
 
-        processNoSpec(spu){
+        bindSelectedSkuNames() {
             this.setData({
-                noSpec:true
+                selectedSpecsNames: this.data.judger.getSkuPendingNames(),
+                skuIntact: this.data.judger.isSkuIntact()
+            })
+        },
+
+        bindNoSelectedSkuNames() {
+            this.setData({
+                noSelectedSpecsNames: this.data.judger.getSkuNoPendingSpecs(),
+                skuIntact: this.data.judger.isSkuIntact()
+            })
+        },
+
+        processNoSpec(spu) {
+            this.setData({
+                noSpec: true
             })
             this.bindSkuData(spu.sku_list[0])
         },
 
-        processHasSpec(spu){
+        processHasSpec(spu) {
             const fenceGroup = new FenceGroup(spu)
             fenceGroup.initFences()
             this.data.judger = new Judger(fenceGroup)
@@ -88,17 +106,35 @@ Component({
                 this.bindSpuData()
             }
             this.bindFenceGroupData(fenceGroup)
+            this.bindSelectedSkuNames()
+            this.bindNoSelectedSkuNames()
         },
-
 
         onCellTap(event) {
             const cell = event.detail.cell
-            //console.log('cell',cell) // 这里的cell是渲染层返回的，不是modules中的Cell类对象，只有属性，没有方法
+            // console.log('cell',cell) // 这里的cell是渲染层返回的，不是modules中的Cell类对象，只有属性，没有方法
             const x = event.detail.x
             const y = event.detail.y
             const judger = this.data.judger
             judger.judge(cell, x, y)
-            this.bindFenceGroupData((judger.fenceGroup))
+            this.bindFenceGroupData(judger.fenceGroup)
+            this.bindSelectedSkuNames()
+            this.bindNoSelectedSkuNames()
+
+            if(this.data.skuIntact){
+                const sku = this.data.judger.getCurrentSelectedSku()
+                this.bindSkuData(sku)
+            }
+        },
+
+        onBuy(event){
+            if(!this.data.skuIntact){
+                wx.showToast({
+                    title:"请选择: "+this.data.noSelectedSpecsNames,
+                    icon:"none"
+                })
+            }
+
         }
     }
 })

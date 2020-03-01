@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 656rpx;
+  height: 66rpx;
+  background-color: #F6F5F5;
+}
+
+.img {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.bar {
+  margin-left: 20rpx;
+  width: 400rpx;
+  height: 28rpx;
+  display: inline-block;
+}
+
+.in-bar {
+  font-size: 28rpx;
+  color: #9d9b9b;
+}

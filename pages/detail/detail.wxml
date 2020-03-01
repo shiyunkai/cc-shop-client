@@ -1,0 +1,61 @@
+<view class="container">
+    <s-common-navbar title="商品详情"/>
+    <view class="img-container">
+        <swiper class="img" autoplay>
+            <swiper-item>
+                <image class="img" src="/images/spu-detail/img.png"></image>
+            </swiper-item>
+            <swiper-item>
+                <image class="img" src="/images/spu-detail/img.png"></image>
+            </swiper-item>
+            <swiper-item>
+                <image class="img" src="/images/spu-detail/img.png"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+
+    <view class="middle-container">
+
+        <view class="desc-container">
+            <text class="title">谱写爱的篇章，莫扎特钢笔墨水礼盒</text>
+            <l-price value="68" color="#9B3D4B" size="28rpx"></l-price>
+            <view bindtap="onSelect" class="selected-container">
+                <text class="selected-item">已选</text>
+                <text class="selected-item">标准礼盒 × 1</text>
+                <image class="selected-btn" src="/images/spu-detail/right.png"></image>
+            </view>
+        </view>
+
+        <view class="tab-container">
+            <l-tabs bind:linchange="" l-line-class="" l-header-line-class="" animated="{{true}}" active-color="#333333"
+                    inactive-color="#9D9B9B">
+                <l-tabpanel tab="商品详情" key="one" slot="one">
+                    <view>
+                        商品详情
+                    </view>
+                </l-tabpanel>
+                <l-tabpanel tab="购买评论" key="two" slot="two">购买评论</l-tabpanel>
+            </l-tabs>
+        </view>
+    </view>
+
+
+    <view bindtap="onSelect" class="bottom-container">
+        <view class="cart">
+            <text>加入购物车</text>
+        </view>
+        <view class="buy">
+            <text>立即购买</text>
+        </view>
+    </view>
+
+
+    <l-popup show="{{specShow}}" content-align="bottom">
+        <view class="popup">
+            <s-realm spu="{{spu}}"></s-realm>
+
+        </view>
+    </l-popup>
+
+
+</view>

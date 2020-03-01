@@ -1,0 +1,81 @@
+<view class="container">
+    <s-common-navbar title="我的"></s-common-navbar>
+
+    <view class="inner-container">
+
+        <view class="info-container">
+
+            <view class="info-inner-container">
+                <view class="info-left-container">
+                    <image class="avatar" src="{{userInfo.avatar}}"></image>
+                    <text>{{userInfo.level}}</text>
+                </view>
+
+                <view class="info-right-container">
+                    <view class="nickname">
+                        <text>SHINE</text>
+                        <image class="qrcode" src="{{userInfo.qrCode}}"></image>
+                    </view>
+
+                    <view class="score-container">
+                        <text class="score">积分</text>
+
+                        <progress class="score-progress" percent="20"
+                                  border-radius="2"
+                                  show-info
+                                  stroke-width="8"
+                                  font-size="14"
+                                  activeColor="#B0985BFF"
+                                  color="#E0D4B6FF"/>
+                    </view>
+                </view>
+
+            </view>
+        </view>
+
+        <view class="order-container">
+            <l-list l-class="my-order" title="我的订单"/>
+
+        </view>
+
+        <view class="menu-container">
+
+            <l-grid l-class="grid" row-num="4">
+                <l-grid-item slot="1" key="1">
+                    <view class="menu-inner-container">
+                        <image class="menu-img" src="/images/my/pay.png"/>
+                        <text>待付款</text>
+                    </view>
+                </l-grid-item>
+                <l-grid-item slot="2" key="2">
+                    <view class="menu-inner-container">
+                    <image class="menu-img" src="/images/my/waiting_deliver.png"/>
+                    <text class="text">待发货</text>
+                        </view>
+                </l-grid-item>
+                <l-grid-item slot="3" key="3">
+                    <view class="menu-inner-container">
+
+                    <image class="menu-img" src="/images/my/deliver.png"/>
+                    <text class="text">已发货</text>
+                    </view>
+                </l-grid-item>
+                <l-grid-item slot="4" key="4">
+                    <view class="menu-inner-container">
+                    <image class="menu-img" src="/images/my/waiting_comment.png"/>
+                    <text class="text">待评价</text>
+                    </view>
+                </l-grid-item>
+            </l-grid>
+        </view>
+
+        <view class="list-container">
+
+            <l-list l-class="list"  l-content-class="list-left" l-right-class="list-right-class" image="/images/my/collection.png" title="我的收藏" right-desc="2个商品"/>
+            <l-list l-class="list" l-content-class="list-left" image="/images/my/shipping_address.png"title="收货地址"/>
+            <l-list l-class="list" l-content-class="list-left" image="/images/my/contact.png" title="联系卖家"/>
+            <l-list l-class="list" l-content-class="list-left" image="/images/my/help.png" title="使用帮助"/>
+        </view>
+    </view>
+</view>
+

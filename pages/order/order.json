@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "s-order-item":"/components/order-item/index"
+  }
+}

@@ -1,0 +1,17 @@
+
+var join = function(targetArray,spearator){
+  console.log('join',targetArray)
+  if(!targetArray){
+    return null
+  }
+
+  if(!targetArray.constructor !=='Array'){
+    return null
+  }
+
+  return targetArray.join(spearator)
+}
+
+module.exports = {
+  join:join
+}

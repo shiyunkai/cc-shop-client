@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "s-realm": "/components/realm/index",
+    "s-spu-detail": "/components/spu-detail/index",
+    "s-common-navbar": "/components/common-navbar/index"
+  }
+}

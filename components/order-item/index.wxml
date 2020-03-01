@@ -1,0 +1,25 @@
+
+<view class="container">
+
+    <view class="inner-container">
+
+        <view class="header">
+            <text class="order-number" decode="{{true}}">订单编号&nbsp;&nbsp; {{data.orderNumber}}</text>
+            <text class="order-status">{{data.status}}</text>
+        </view>
+            <s-line/>
+        <view class="middle">
+            <image class="img" src="{{data.img}}"></image>
+            <text class="title">{{data.title}}</text>
+        </view>
+            <s-line/>
+        <view class="footer">
+            <text class="number">共{{data.num}}件</text>
+            <view class="price-amount">
+                <text class="total-title">总计:</text>
+                <l-price color="#A2313EFF" size="36" value="{{data.totalPrice}}"></l-price>
+            </view>
+        </view>
+    </view>
+
+</view>

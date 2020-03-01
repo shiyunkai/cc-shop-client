@@ -1,0 +1,4 @@
+<view class="container s-class">
+  <image class="img" src="images/search.png"></image>
+  <input class="bar" placeholder-class="in-bar" auto-focus placeholder="搜索好物，共121个精选商品"></input>
+</view>

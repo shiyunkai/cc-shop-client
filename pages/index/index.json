@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "s-search": "/components/search/index",
+    "s-spu-preview": "/components/spu-preview/index"
+  }
+}

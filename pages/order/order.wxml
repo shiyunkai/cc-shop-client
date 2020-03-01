@@ -1,0 +1,32 @@
+<s-common-navbar title="我的订单"></s-common-navbar>
+
+<view class="container">
+
+  <view class="tabs-container">
+    <l-tabs l-class-content="tabs-content" l-class-header-line="tabs-line" bind:linchange="" equal-width="{{false}}" animated="{{true}}" scrollable="{{true}}" active-color="#A2313E" inactive-color="#9D9B9B">
+      <l-tabpanel tab="全部" key="one" slot="one">
+        <view class="order-list">
+          <block wx:for="{{orderList}}" wx:key="index">
+            <s-order-item data="{{item}}"/>
+          </block>
+        </view>
+      </l-tabpanel>
+      <l-tabpanel tab="待付款" key="two" slot="two">
+        <view class="tab-content">品牌数码</view>
+      </l-tabpanel>
+      <l-tabpanel tab="待发货" key="three" slot="three">
+        <view class="tab-content">美妆</view>
+      </l-tabpanel>
+      <l-tabpanel tab="已发货" key="four" slot="four">
+        <view class="tab-content">面板</view>
+      </l-tabpanel>
+      <l-tabpanel tab="待收货" key="five" slot="five">
+        <view class="tab-content">接口</view>
+      </l-tabpanel>
+      <l-tabpanel tab="待评价" key="six" slot="six">
+        <view class="tab-content">面板</view>
+      </l-tabpanel>
+
+    </l-tabs>
+  </view>
+</view>

@@ -38,6 +38,38 @@ class Judger {
         return this.skuPending.isIntact()
     }
 
+    getSkuPendingNames(){
+        return this.skuPending.getSkuNames()
+    }
+
+    getSkuNoPendingSpecs(){
+        const joiner = new Joiner('，')
+        const allSpecs = this.fenceGroup.skuList[0].specs
+        const selectedSpecs = this.skuPending.pending
+        allSpecs.forEach(a=>{
+           let exists = selectedSpecs.find(s=>{
+               if(s){
+                return s.spec.key_id === a.key_id
+               }
+           })
+            if(!exists){
+               joiner.join(a.key)
+            }
+        })
+
+        return joiner.getStr()
+    }
+
+    getCurrentSelectedSku(){
+        const skuCode = this.skuPending.getSelectedSkuCode()
+        const sku = this.fenceGroup.skuList.find(s=>{
+            const code = s.code.split("$")
+            return skuCode === code[1]
+        })
+
+        return sku
+    }
+
 
     _initSkuPending() {
         const specsLength = this.fenceGroup.fences.length
@@ -78,7 +110,6 @@ class Judger {
             this.fenceGroup.setCellStatusByXY(x,y,CellStatus.WAITING)
             this.skuPending.removeCell(x)
         }
-
     }
 
 

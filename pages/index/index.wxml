@@ -1,0 +1,58 @@
+<!--index.wxml-->
+  <s-navbar/>
+<view class="container">
+  <s-search s-class="search" />
+
+  <view class="activity">
+    <swiper indicator-dots="{{true}}" autoplay="{{true}}" indicator-active-color="#5E5C5C" indicator-color="f0f0f0">
+      <swiper-item>
+        <image class="activity" src="/images/home/banner1.png"></image>
+      </swiper-item>
+      <swiper-item>
+        <image class="activity" src="/images/home/banner1.png"></image>
+      </swiper-item>
+      <swiper-item>
+        <image class="activity" src="/images/home/banner1.png"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class="category-tabs">
+    <l-tabs bind:linchange="" equal-width="{{false}}" animated="{{true}}" scrollable="{{true}}" active-color="#A2313E" inactive-color="#9D9B9B">
+      <l-tabpanel tab="精选" key="one" slot="one">
+        <view class="category-imgs">
+          <image class="category-left" src="/images/home/category1.png"></image>
+          <view class="category-rigth">
+            <image class="category-rigth-item" src="/images/home/category2.png"></image>
+            <image class="category-rigth-item" src="/images/home/category3.png"></image>
+          </view>
+        </view>
+      </l-tabpanel>
+      <l-tabpanel tab="数码" key="two" slot="two">
+        <view class="tab-content">品牌数码</view>
+      </l-tabpanel>
+      <l-tabpanel tab="美妆" key="three" slot="three">
+        <view class="tab-content">美妆</view>
+      </l-tabpanel>
+      <l-tabpanel tab="面板" key="four" slot="four">
+        <view class="tab-content">面板</view>
+      </l-tabpanel>
+      <l-tabpanel tab="接口" key="five" slot="five">
+        <view class="tab-content">接口</view>
+      </l-tabpanel>
+      <l-tabpanel tab="面板" key="six" slot="six">
+        <view class="tab-content">面板</view>
+      </l-tabpanel>
+
+    </l-tabs>
+  </view>
+
+  <image class="recommend" src="/images/home/recommend.png"></image>
+
+  <view class="spu-preview">
+    <l-water-flow generic:l-water-flow-item="s-spu-preview" column-gap="50rpx" />
+  </view>
+
+
+
+</view>

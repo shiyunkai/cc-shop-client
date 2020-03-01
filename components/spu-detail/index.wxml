@@ -1,0 +1,79 @@
+<wxs src="../../wxs/array.wxs" module="a" />
+
+<view class="container">
+  <view class="info-container">
+    <image class="main-img" src="{{data.img}}"></image>
+    <view class="info-right-container">
+      <view>
+        <text class="title">{{sku.title}}</text>
+      </view>
+
+      <view>
+        <view class="price-stock-container">
+          <l-price value="{{sku.price}}" color="#9B3D4B" size="28rpx"></l-price>
+          <text class="stock">库存： {{sku.stock}}件</text>
+        </view>
+        <view class="selected-container">
+          <text class="select-tiitle">请选择:</text>
+          <text class="select-container">{{util.getSpecesNames(sku.specs)}}</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view class="line"></view>
+  <view class="specs-container">
+    <text class="text">颜色:</text>
+    <view class="specs-inner-container">
+      <l-button l-class="specs-button" size="mini">藏青色</l-button>
+      <l-button l-class="specs-button" size="mini">米黄色</l-button>
+    </view>
+  </view>
+  <view class="line"></view>
+
+
+  <view class="specs-container">
+    <text class="text">双色沙发尺寸:</text>
+    <view class="specs-inner-container">
+      <l-button l-class="specs-button" size="mini">1.5米 x 1米</l-button>
+      <l-button l-class="specs-button" size="mini">2米 x 1米</l-button>
+    </view>
+  </view>
+  <view class="line"></view>
+
+  <view class="num-container">
+    <text class="text">购买数量</text>
+    <l-counter count="1" min="1" max="10" />
+  </view>
+
+
+</view>
+
+<wxs module="util">
+  var getSpecsNames = function(specs) {
+    console.log('specs',specs)
+    if (!specs) {
+      return null;
+    }
+
+    if (!specs.constructor !== 'Array') {
+      return null;
+    }
+
+    var len = specs.length;
+    var names= '';
+    for (i = 0; i < len; i++) {
+      if (i != len - 1) {
+        names += specs[i].key + ', ';
+      } else {
+        names += specs[i].key
+      }
+    }
+
+    return names;
+  }
+
+  module.exports = {
+    getSpecsNames:getSpecsNames
+  }
+</wxs>

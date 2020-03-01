@@ -22,12 +22,12 @@
 }
 
 .s-outer {
-    border: 2rpx solid #157658;
+    border: 1rpx solid #A2313EFF;
     color: #ffffff;
 }
 
 .s-inner {
-    background-color: #157658;
+    background-color: #A2313EFF;
 }
 
 .selected {

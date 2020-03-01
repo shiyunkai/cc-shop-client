@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 200rpx;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-img {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.info-right-container {
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 30rpx;
+  color: #000;
+}
+
+.price-stock-container {
+  margin-bottom: 10rpx;
+}
+
+.stock {
+  margin-left: 30rpx;
+  font-size: 20rpx;
+  color: #999999ff;
+}
+
+.select-tiitle {
+  margin-right: 10rpx;
+  font-size: 20rpx;
+  color: #999999ff;
+}
+
+.select-container {
+  font-size: 25rpx;
+  color: rgb(63, 58, 58);
+}
+
+.info-container {
+}
+
+.specs-container {
+}
+
+.text {
+  font-size: 26rpx;
+  color: #000;
+}
+
+.specs-inner-container {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.specs-button {
+  border: 1px dashed #ccc;
+  background-color: #fff;
+  margin-right: 10rpx;
+  color: rgb(158, 154, 154);
+}
+
+.specs-active-button {
+  background-color: rgb(204, 70, 85);
+  margin-right: 10rpx;
+  color: #fff;
+}
+
+.num-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.line {
+  margin: 30rpx 0;
+  border-bottom: 1px solid #ccc;
+}
